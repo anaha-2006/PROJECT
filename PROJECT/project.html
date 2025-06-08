@@ -1,0 +1,303 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HUMAN BODY PARTS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url('back.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Navigation Bar Styles */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    .navbar .navbar-brand {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .navbar .navbar-brand i {
+      margin-right: 10px;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    .section {
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .part-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .part-card {
+      width: 80%;
+      max-width: 500px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background-color: white;
+    }
+
+    .part-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .part-title {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+
+    .btn-info {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-info:hover {
+      background: #0056b3;
+    }
+
+    .contact-section {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+
+    .contact-section h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .contact-section label {
+      color: white;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-section button {
+      background: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contact-section button:hover {
+      background: #218838;
+    }
+
+    /* Footer Style */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #222;
+      color: #ccc;
+    }
+    h2{
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="#" class="navbar-brand">
+    <i class="fas fa-brain"></i> Human Body Parts
+  </a>
+  <button class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+</div>
+<div class="nav-links" id="navLinks">
+  <a href="#">Home</a>
+  <a href="#features">Features</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- Hero Section -->
+<div class="section" style="background: rgba(0, 0, 0, 0.6); color: white; padding: 80px 20px;">
+  <h1>Explore the Human Body</h1>
+  <p style="font-size: 1.2em;">Understand how your organs work and keep your body healthy.</p>
+  <a href="#contact" class="btn-info">Get in Touch</a>
+</div>
+
+<!-- Main Section -->
+<div class="section">
+  <h2>KNOW MORE ABOUT HUMAN BODY PARTS</h2>
+  <div class="part-container">
+    <div class="part-card">
+      <img src="heart.avif" alt="Heart" class="part-img">
+      <h4 class="part-title">Heart</h4>
+      <button class="btn-info" onclick="showInfo('heart')">Know More</button>
+    </div>
+    <div class="part-card">
+      <img src="Lungs.png" alt="Lungs" class="part-img">
+      <h4 class="part-title">Lungs</h4>
+      <button class="btn-info" onclick="showInfo('lungs')">Know More</button>
+    </div>
+    <div class="part-card">
+      <img src="kidney.jpg" alt="Kidney" class="part-img">
+      <h4 class="part-title">Kidney</h4>
+      <button class="btn-info" onclick="showInfo('kidney')">Know More</button>
+    </div>
+    <div class="part-card">
+      <img src="liver.jpg" alt="Liver" class="part-img">
+      <h4 class="part-title">Liver</h4>
+      <button class="btn-info" onclick="showInfo('liver')">Know More</button>
+    </div>
+    <div class="part-card">
+      <img src="stomach.jpg" alt="Stomach" class="part-img">
+      <h4 class="part-title">Stomach</h4>
+      <button class="btn-info" onclick="showInfo('stomach')">Know More</button>
+    </div>
+    <div class="part-card">
+      <img src="small.jpg" alt="Large Intestine" class="part-img">
+      <h4 class="part-title">Large Intestine</h4>
+      <button class="btn-info" onclick="showInfo('largeIntestine')">Know More</button>
+    </div>
+    <div class="part-card">
+      <img src="large.jpg" alt="Small Intestine" class="part-img">
+      <h4 class="part-title">Small Intestine</h4>
+      <button class="btn-info" onclick="showInfo('smallIntestine')">Know More</button>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="section" id="features" style="background-color: white;">
+  <h2>Why Learn About the Human Body?</h2>
+  <div class="part-container">
+    <div class="part-card">
+      <h4 class="part-title">Health Awareness</h4>
+      <p>Learn how your body works so you can take better care of it.</p>
+    </div>
+    <div class="part-card">
+      <h4 class="part-title">Biology Education</h4>
+      <p>Perfect for students and learners of anatomy and physiology.</p>
+    </div>
+    <div class="part-card">
+      <h4 class="part-title">Curiosity</h4>
+      <p>Feed your curiosity and explore the amazing systems inside you.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Us Form -->
+<div class="contact-section" id="contact">
+  <h3>Get in Touch</h3>
+  <form action="submit_form.php" method="POST">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="address">Your Address:</label>
+    <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<!-- Footer -->
+<footer>
+  © 2025 Human Body Parts. All rights reserved.
+</footer>
+
+<script>
+  function showInfo(part) {
+    const info = {
+      heart: "The heart is a muscular organ that pumps blood throughout the body.",
+      lungs: "The lungs help in the process of respiration and exchange oxygen and carbon dioxide.",
+      kidney: "The kidneys filter waste products and excess fluids from the blood, producing urine.",
+      liver: "The liver processes nutrients from food, detoxifies harmful substances, and produces bile.",
+      stomach: "The stomach secretes acid and enzymes that digest food, and it churns food to enhance digestion.",
+      largeIntestine: "Large Intestine absorbs water and electrolytes from undigested food.",
+      smallIntestine: "Small Intestine breaks down food and absorbs nutrients from the body."
+    };
+    alert(info[part]);
+  }
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
